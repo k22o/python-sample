@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+"""
+Python Sample メイン実行ファイル
+
+このファイルはサンプルコードの使用方法を示します。
+"""
+import sys
+import os
+
+# srcディレクトリをパスに追加
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+
+from calculator import Calculator, calculate_average, calculate_factorial
+from utils import is_prime, fibonacci, format_number, validate_number_range, find_max_min
+from advanced.math_tools import power, sqrt
+
+
+def main():
+    """メイン関数"""
+    print("=== Python Sample プログラム ===")
+    print()
+    
+    # Calculatorクラスの使用例
+    print("1. Calculatorクラスの使用例:")
+    calc = Calculator()
+    
+    print(f"  2 + 3 = {calc.add(2, 3)}")
+    print(f"  10 - 4 = {calc.subtract(10, 4)}")
+    print(f"  5 * 6 = {calc.multiply(5, 6)}")
+    print(f"  15 / 3 = {calc.divide(15, 3)}")
+    
+    print(f"  計算履歴: {calc.get_history()}")
+    print()
+    
+    # 関数の使用例
+    print("2. ユーティリティ関数の使用例:")
+    
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    print(f"  数値リスト: {numbers}")
+    print(f"  平均値: {calculate_average(numbers)}")
+    
+    max_val, min_val = find_max_min(numbers)
+    print(f"  最大値: {max_val}, 最小値: {min_val}")
+    
+    print(f"  5の階乗: {calculate_factorial(5)}")
+    print(f"  7は素数: {is_prime(7)}")
+    print(f"  10番目のフィボナッチ数: {fibonacci(10)}")
+    print(f"  3.14159を2桁でフォーマット: {format_number(3.14159)}")
+    print(f"  5は0-10の範囲内: {validate_number_range(5, 0, 10)}")
+    print()
+    
+    # エラーハンドリングの例
+    print("3. エラーハンドリングの例:")
+    try:
+        calc.divide(10, 0)
+    except ValueError as e:
+        print(f"  エラー: {e}")
+    
+    try:
+        calculate_factorial(-1)
+    except ValueError as e:
+        print(f"  エラー: {e}")
+    
+    try:
+        calculate_average([])
+    except ValueError as e:
+        print(f"  エラー: {e}")
+    
+    print()
+    
+    # advanced.math_tools の使用例
+    print("4. advanced.math_tools の使用例:")
+    print(f"  2の10乗: {power(2, 10)}")
+    print(f"  16の平方根: {sqrt(16)}")
+    try:
+        sqrt(-1)
+    except ValueError as e:
+        print(f"  エラー: {e}")
+    
+    print()
+    print("=== プログラム終了 ===")
+
+
+if __name__ == "__main__":
+    main() 
