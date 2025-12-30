@@ -1,5 +1,5 @@
 import unittest
-from src.utils import (
+from src.utils.utils import (
     is_prime,
     fibonacci,
     format_number,

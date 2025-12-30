@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 from calculator import Calculator, calculate_average, calculate_factorial
-from utils import is_prime, fibonacci, format_number, validate_number_range, find_max_min
-from advanced.math_tools import power, sqrt
+from utils.utils import is_prime, fibonacci, format_number, validate_number_range, find_max_min
+from dotenv import load_dotenv
+import os
 
+def load_env():
+    load_dotenv()
+    print("env:" + os.getenv("SAMPLE_TOKEN"))
 
 def main():
-    """メイン関数"""
     print("=== Python Sample プログラム ===")
     print()
     
@@ -56,17 +59,9 @@ def main():
         print(f"  エラー: {e}")
     
     print()
-    
-    # advanced.math_tools の使用例
-    print("4. advanced.math_tools の使用例:")
-    print(f"  2の10乗: {power(2, 10)}")
-    print(f"  16の平方根: {sqrt(16)}")
-    try:
-        sqrt(-1)
-    except ValueError as e:
-        print(f"  エラー: {e}")
-    
-    print()
+   
+    load_env()
+
     print("=== プログラム終了 ===")
 
 

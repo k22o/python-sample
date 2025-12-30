@@ -5,6 +5,8 @@
 - モジュール化
 - テストコード
 - venv
+- 環境変数の利用 (dotenv)
+- 型定義
 
 ## 起動方法
 
@@ -21,7 +23,7 @@ pip3 install -r requirements.txt
 python3 -m unittest discover test 
 
 # 特定のテストファイルの実行
-python3 -m unittest test.test_utils
+python3 -m unittest test.utils.test_utils
 
 # 個別のテストクラスの実行
 python3 -m unittest test.test_calculator.TestCalculator
