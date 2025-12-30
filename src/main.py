@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-"""
-Python Sample メイン実行ファイル
-
-このファイルはサンプルコードの使用方法を示します。
-"""
-import sys
-import os
-
-# srcディレクトリをパスに追加
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-
 from calculator import Calculator, calculate_average, calculate_factorial
 from utils import is_prime, fibonacci, format_number, validate_number_range, find_max_min
 from advanced.math_tools import power, sqrt
