@@ -4,7 +4,7 @@
 このモジュールは一般的なユーティリティ関数を提供します。
 """
 import math
-from typing import List, Union
+from typing import Union
 
 def is_prime(n: int) -> bool:
     """
@@ -90,7 +90,7 @@ def validate_number_range(value: float, min_val: float, max_val: float) -> bool:
     return min_val <= value <= max_val
 
 
-def find_max_min(numbers: List[float]) -> tuple:
+def find_max_min(numbers: list[float]) -> tuple:
     """
     数値のリストから最大値と最小値を取得します
     
